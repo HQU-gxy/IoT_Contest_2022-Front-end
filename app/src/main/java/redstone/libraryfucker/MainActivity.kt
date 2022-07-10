@@ -51,11 +51,8 @@ class MainActivity : AppCompatActivity() {
                             val anIntent =
                                 Intent(this@MainActivity, LoginActivity()::class.java).apply {
                                     putExtra("userName", userName)
+                                    putExtra("logout",true)
                                 }
-                            with(getPreferences(MODE_PRIVATE).edit()) {
-                                putBoolean("logout", true)
-                                apply()
-                            }
                             startActivity(anIntent)
                             exitProcess(0)
                         }
@@ -75,30 +72,30 @@ class MainActivity : AppCompatActivity() {
         Thread {
             while (true) {
                 try {
-                        val response = httpClient.newCall(request).execute().body?.string()
-                        val statusJSON = JSONObject(response!!)
-                        val statusList = arrayListOf<Array<Int>>()
-                        var selfReserved = 0
-                        if (statusJSON.getBoolean("valid")) {
-                            val statusArray = statusJSON.getJSONArray("seats")
-                            for (foo in 0 until statusArray.length()) {
-                                val thisStatus = statusArray.get(foo) as JSONObject
-                                if (thisStatus.getInt("status") == 3) selfReserved =
-                                    thisStatus.getInt("seatNum")
-                                statusList.add(
-                                    arrayOf(
-                                        thisStatus.getInt("seatNum"),
-                                        thisStatus.getInt("status")
-                                    )
+                    val response = httpClient.newCall(request).execute().body?.string()
+                    val statusJSON = JSONObject(response!!)
+                    val statusList = arrayListOf<Array<Int>>()
+                    var selfReserved = 0
+                    if (statusJSON.getBoolean("valid")) {
+                        val statusArray = statusJSON.getJSONArray("seats")
+                        for (foo in 0 until statusArray.length()) {
+                            val thisStatus = statusArray.get(foo) as JSONObject
+                            if (thisStatus.getInt("status") == 3) selfReserved =
+                                thisStatus.getInt("seatNum")
+                            statusList.add(
+                                arrayOf(
+                                    thisStatus.getInt("seatNum"),
+                                    thisStatus.getInt("status")
                                 )
-                            }
-                            for (aStatus in statusList) {
-                                runOnUiThread { setStatus(aStatus[0], aStatus[1], selfReserved) }
-                            }
-                        } else {
-                            Log.i("statusJSON", statusJSON.toString())
+                            )
                         }
-                        Thread.sleep(1000)
+                        for (aStatus in statusList) {
+                            runOnUiThread { setStatus(aStatus[0], aStatus[1], selfReserved) }
+                        }
+                    } else {
+                        Log.i("statusJSON", statusJSON.toString())
+                    }
+                    Thread.sleep(1000)
                 } catch (e: Exception) {
                     runOnUiThread { Toast.makeText(this, "连不上服务器", Toast.LENGTH_SHORT).show() }
                     e.printStackTrace()

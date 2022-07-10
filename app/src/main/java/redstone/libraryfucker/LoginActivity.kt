@@ -28,11 +28,11 @@ class LoginActivity : AppCompatActivity() {
 
         //check if there's a login history
         sharedPref = getPreferences(Context.MODE_PRIVATE)
-        var userName = sharedPref.getString("userName", "NO_FUCKING_USERNAME")
-        val isLogout = sharedPref.getBoolean("logout", false)
+        val userName = sharedPref.getString("userName", "NO_FUCKING_USERNAME")
+        val isLogout = intent.getBooleanExtra("logout",false) or sharedPref.getBoolean("logout",false)
         if (isLogout) {
-            userName = intent.getStringExtra("userName")
             binding.textUsernme.setText(userName)
+            sharedPref.edit().putBoolean("logout",true).apply()
         } else {
             if (userName != "NO_FUCKING_USERNAME") {
                 val passwd = sharedPref.getString("passwd", "shit")
