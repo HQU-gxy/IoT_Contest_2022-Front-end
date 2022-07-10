@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/RedStone/AndroidStudioProjects/LibraryFucker/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2795" />
+        <entry key="..\:/Users/RedStone/AndroidStudioProjects/LibraryFucker/app/src/main/res/drawable/ic_avatar.xml" value="0.263" />
+        <entry key="..\:/Users/RedStone/AndroidStudioProjects/LibraryFucker/app/src/main/res/drawable/ic_desk.xml" value="0.2795" />
+        <entry key="..\:/Users/RedStone/AndroidStudioProjects/LibraryFucker/app/src/main/res/layout/activity_login.xml" value="0.2644927536231884" />
+        <entry key="..\:/Users/RedStone/AndroidStudioProjects/LibraryFucker/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/RedStone/AndroidStudioProjects/LibraryFucker/app/src/main/res/layout/content_main.xml" value="0.2644927536231884" />
+        <entry key="..\:/Users/RedStone/AndroidStudioProjects/LibraryFucker/app/src/main/res/layout/fragment_first.xml" value="0.2644927536231884" />
+        <entry key="..\:/Users/RedStone/AndroidStudioProjects/LibraryFucker/app/src/main/res/layout/fragment_login.xml" value="0.2717391304347826" />
+        <entry key="..\:/Users/RedStone/AndroidStudioProjects/LibraryFucker/app/src/main/res/layout/fragment_reg.xml" value="0.2717391304347826" />
+        <entry key="..\:/Users/RedStone/AndroidStudioProjects/LibraryFucker/app/src/main/res/layout/fragment_second.xml" value="0.2644927536231884" />
+        <entry key="..\:/Users/RedStone/AndroidStudioProjects/LibraryFucker/app/src/main/res/menu/app_bar_menu.xml" value="0.303125" />
+        <entry key="..\:/Users/RedStone/AndroidStudioProjects/LibraryFucker/app/src/main/res/menu/menu_main.xml" value="0.30416666666666664" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
