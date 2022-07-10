@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="color_app_title_text">#FFFFFFFF</color>
+    <color name="color_app_bar">#92673AB7</color>
+    <color name="color_app_bg">#5CEAD72E</color>
+    <color name="desk_avail">#B44CAF50</color>
+    <color name="desk_occupied">#6DC5124B</color>
+    <color name="desk_reserved">#9EFFEB3B</color>
+
+</resources>
